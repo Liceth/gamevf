@@ -25,6 +25,14 @@
             android:name=".historial"
             android:label="@string/title_activity_historial" >
         </activity>
+        <activity
+            android:name=".Facil"
+            android:label="@string/title_activity_facil" >
+        </activity>
+        <activity
+            android:name=".Dificil"
+            android:label="@string/title_activity_dificil" >
+        </activity>
     </application>
 
 </manifest>

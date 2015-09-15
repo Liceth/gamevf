@@ -1,5 +1,10 @@
 package licethovalles.administrador.game;
 
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
 
 
 import android.content.Context;
@@ -24,10 +29,10 @@ import java.util.ArrayList;
 import android.os.Handler;
 
 
-public class MainActivity extends ActionBarActivity  {
+public class Dificil extends ActionBarActivity  {
 
     private String TAG = "elJuego";
-    private Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20;
+    private Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22;
     private TextView ed;
     ArrayList botones;
     RelativeLayout X;
@@ -41,7 +46,7 @@ public class MainActivity extends ActionBarActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dificil);
         b1=(Button)findViewById(R.id.button1);
         b2=(Button)findViewById(R.id.button2);
         b3=(Button)findViewById(R.id.button3);
@@ -62,12 +67,15 @@ public class MainActivity extends ActionBarActivity  {
         b18=(Button)findViewById(R.id.button18);
         b19=(Button)findViewById(R.id.button19);
         b20=(Button)findViewById(R.id.button20);
+        b21=(Button)findViewById(R.id.button21);
+        b22=(Button)findViewById(R.id.button22);
+
         botones=new ArrayList<Button>();
         puntajes="";
         X= (RelativeLayout)findViewById(R.id.game);
         ed = (TextView)findViewById(R.id.textView);
         ed.setText("Intentos : "+intento+"\r\ntotal : "+total);
-        contador=16;
+        contador=10;
 
 
 
@@ -82,7 +90,7 @@ public class MainActivity extends ActionBarActivity  {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b2.setText("1");
+                b2.setText("2");
                 botones.add(b2);
                 comparar2();
             }
@@ -90,7 +98,7 @@ public class MainActivity extends ActionBarActivity  {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b3.setText("2");
+                b3.setText("1");
                 botones.add(b3);
                 comparar2();
             }
@@ -106,7 +114,7 @@ public class MainActivity extends ActionBarActivity  {
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b5.setText("4");
+                b5.setText("3");
                 botones.add(b5);
                 comparar2();
             }
@@ -119,26 +127,10 @@ public class MainActivity extends ActionBarActivity  {
                 comparar2();
             }
         });
-        b7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                b7.setText("4");
-                botones.add(b7);
-                comparar2();
-            }
-        });
-        b8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                b8.setText("3");
-                botones.add(b8);
-                comparar2();
-            }
-        });
         b9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b9.setText("8");
+                b9.setText("4");
                 botones.add(b9);
                 comparar2();
             }
@@ -146,7 +138,7 @@ public class MainActivity extends ActionBarActivity  {
         b10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b10.setText("7");
+                b10.setText("6");
                 botones.add(b10);
                 comparar2();
             }
@@ -154,7 +146,7 @@ public class MainActivity extends ActionBarActivity  {
         b11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b11.setText("6");
+                b11.setText("5");
                 botones.add(b11);
                 comparar2();
             }
@@ -170,7 +162,7 @@ public class MainActivity extends ActionBarActivity  {
         b13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b13.setText("7");
+                b13.setText("6");
                 botones.add(b13);
                 comparar2();
             }
@@ -178,7 +170,7 @@ public class MainActivity extends ActionBarActivity  {
         b14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b14.setText("5");
+                b14.setText("4");
                 botones.add(b14);
                 comparar2();
             }
@@ -186,7 +178,7 @@ public class MainActivity extends ActionBarActivity  {
         b15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b15.setText("8");
+                b15.setText("9");
                 botones.add(b15);
                 comparar2();
             }
@@ -194,30 +186,63 @@ public class MainActivity extends ActionBarActivity  {
         b16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b16.setText("6");
+                b16.setText("9");
                 botones.add(b16);
                 comparar2();
             }
         });
-
+        b17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                b17.setText("7");
+                botones.add(b17);
+                comparar2();
+            }
+        });
         b18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.startActivity(new Intent(MainActivity.this, historial.class));
-
+                b18.setText("8");
+                botones.add(b18);
+                comparar2();
             }
         });
         b19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.startActivity(new Intent(MainActivity.this, Facil.class));
-
+                b19.setText("7");
+                botones.add(b19);
+                comparar2();
             }
         });
         b20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.startActivity(new Intent(MainActivity.this, Dificil.class));
+                b20.setText("8");
+                botones.add(b20);
+                comparar2();
+            }
+        });
+
+
+        b8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dificil.this.startActivity(new Intent(Dificil.this, historial.class));
+
+            }
+        });
+        b21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dificil.this.startActivity(new Intent(Dificil.this, Facil.class));
+
+            }
+        });
+        b22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dificil.this.startActivity(new Intent(Dificil.this, MainActivity.class));
 
             }
         });
@@ -266,55 +291,55 @@ public class MainActivity extends ActionBarActivity  {
         return super.onOptionsItemSelected(item);
     }
 
-public void comparar2()
-{
-    final Handler handler = new Handler();
-    handler.postDelayed(new Runnable() {
-        @Override
-        public void run() {
-            comparar();
+    public void comparar2()
+    {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                comparar();
 
-        }
-    }, 500);
+            }
+        }, 500);
 
-}
+    }
 
 
     public void comparar(){
 
 
         if(botones.size()==2){
-        //    new Timer().schedule(new TimerTask() {
-          //      @Override
+            //    new Timer().schedule(new TimerTask() {
+            //      @Override
             //    public void run() {
 
-                    Button a = (Button) botones.get(0);
-                    Button b = (Button) botones.get(1);
-                    botones.clear();
-                    intento = intento + 1;
-                    if (a.getText().equals(b.getText())) {
+            Button a = (Button) botones.get(0);
+            Button b = (Button) botones.get(1);
+            botones.clear();
+            intento = intento + 1;
+            if (a.getText().equals(b.getText())) {
 
 
-                        total = total + 1;
+                total = total + 1;
 
-                        a.setEnabled(false);
-                        b.setEnabled(false);
-                        contador -= 2;
-                        if (contador == 0) {
-                            NoJuego++;
-                            MayorPtj=8*100/intento;
-                            Toast.makeText(getApplicationContext(), "Has Ganado y tu Puntuacion es "+MayorPtj, Toast.LENGTH_LONG).show();
-                            juegos();
-                        }
-                    } else {
+                a.setEnabled(false);
+                b.setEnabled(false);
+                contador -= 2;
+                if (contador == 0) {
+                    NoJuego++;
+                    MayorPtj=6*100/intento;
+                    Toast.makeText(getApplicationContext(), "Has Ganado y tu Puntuacion es "+MayorPtj, Toast.LENGTH_LONG).show();
+                    juegos();
+                }
+            } else {
 
-                        a.setText("");
-                        b.setText("");
+                a.setText("");
+                b.setText("");
 
 
-                    }
-                    ed.setText("Intentos : " + intento + "\r\nNo Parejas: " + total);
-                //}
+            }
+            ed.setText("Intentos : " + intento + "\r\nNo Parejas: " + total);
+            //}
             //}, 2000);
 
 
@@ -368,3 +393,6 @@ public void comparar2()
 
 
 }
+
+
+

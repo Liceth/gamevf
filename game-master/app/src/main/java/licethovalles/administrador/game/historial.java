@@ -37,7 +37,7 @@ public class historial extends AppCompatActivity {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         int game = sharedPref.getInt("PUNTAJES", 0);
         int puntaje=sharedPref.getInt("MAYORPTJ", 0);
-        puntajes=puntajes+sharedPref.getString("PUNTAJES2", Integer.toString(puntaje));
+        //puntajes=puntajes+sharedPref.getString("PUNTAJES2", Integer.toString(puntaje));
 
 
 
@@ -46,7 +46,7 @@ public class historial extends AppCompatActivity {
         ed.setText("No juegos Ganados "+game);
 
         ed2=(TextView) findViewById(R.id.textView4);
-        ed2.setText("Mayor Puntaje "+puntajes);
+        ed2.setText("Mayor Puntaje "+puntaje);
 
 
 
